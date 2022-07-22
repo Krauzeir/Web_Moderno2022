@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
     <style>
-        /* ... */
+        body {
+            background-color: aquamarine;
+        }
     </style>
+    <link rel="stylesheet" href="css/externo.css">
+    <!-- A leitura(cima para baixo) do head determina a ordem de leitura, logo se houver customizações diferentes para um mesmo conteúdo, o ultimo permanecerá -->
 </head>
 
-<body>
+<!-- O css inline tem uma prioridade maior do que qualquer arquivo externo -->
+<body style="background-color: coral;">
     <h1>E agora?</h1>
 </body>
 
