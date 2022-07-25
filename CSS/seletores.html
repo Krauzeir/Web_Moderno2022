@@ -6,7 +6,87 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* '*' É um seletor UNIVERSAL
+        * {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        
+        /* '.' É um seletor de CLASSE
+        .tag {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+
+        /* '#' É um seletor de ID
+        #aprovados {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+
+        /* '>' É um seletor no qual é selecionado o que está diretamente associado ao elemento anterior, ou seja, no caso abaixo apenas a DIV do id ANINHADO receberá a customização. */
+        /*#aninhado > div {
+            color: #ff0;
+            background-color: #f77;
+        }*/
+
+
+        /* '+' É um seletor no qual irá encontrar o irmão AO LADO para receber a customização. No caso abaixo, o primeiro UL após o P será customizado */
+        /* p + ul {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+
+        /* '+' É um seletor no qual irá encontrar o irmão para receber a customização. No caso abaixo, o primeiro OL após o P será customizado */
+        /* p ~ ol {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+
+        /* '[elemento]' É um seletor qual você informa o ELEMENTO que receberá a customização, ou, você pode determinar o ELEMENTO e seu VALOR */
+        /* [feira] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* [feira=casa] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* NÃO FUNCIONARÁ, pois não existe valor 'escritorio'
+        [feira=escritorio] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* FUNCIONARÁ (~), pois contém a palavra 'escritorio' em alguns elementos como valor
+        [feira~=escritorio] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* FUNCIONARÁ (*), nas palavras que possuam 'sa' em seu valor dentro do elemento
+        [feira*=sa] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+
+        /* nth-child() Seleciona os filhos baseado no parametro que foi informado. No caso abaixo, dentro da SECTION, escolhemos ou valores pares e impares(odd) e colocamos as customizações*/
+        /* section > :nth-child(even) {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+
+        /* nth-of-type() Seleciona o elemento do tipo informado e qual posição dele. No caso abaixo, é considerado o segundo SPAN dentro da SECTION*/
+        /*
+        section > span:nth-of-type(2){
+            color: #ff0;
+            background-color: #f77;
+        } */
     </style>
 </head>
 

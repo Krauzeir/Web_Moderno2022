@@ -5,7 +5,64 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+
+        .static {
+            top: 100px; /* Com position: static NÃO será levado em conta */
+            left: 100px; /* Com position: static NÃO será levado em conta */
+            background-color: steelblue;
+        }
+
+        .fixed {
+            position: fixed; /* Ficará fixo de acordo com os valores abaixo, mesmo quando der scroll na página */
+            bottom: 30px; 
+            right: 0px; 
+            background-color: tomato;
+        }
+
+        .relative1 { /* Levará em consideração o elemento anterior */
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color: seagreen;
+        }
+
+        .absolute1 { /* Ele irá sobrepor os outros elementos dependendo de seus valores. Se posiciona em relação ao VIEWPORT */
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+
+        .relative2 { /* Levará em consideração o elemento anterior */
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategray;
+        }
+
+        .absolute2 { /* Nesse caso sua posição será relacionada a sua classe anterior 'relative2' e NÃO mais ao VIEWPORT */
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky { /* Funcionará normalmente, até o momento que ocorre o scroll e ele continuará congelado na posição informada */
+            position: -webkit-sticky; /* Navegador Safari */
+            position: sticky;
+            background-color: #777;
+            top: 0px;
+        }
+
     </style>
 </head>
 

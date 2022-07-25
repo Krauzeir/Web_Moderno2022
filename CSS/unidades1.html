@@ -5,7 +5,29 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        .unidades-absolutas {
+            position: absolute; /* 'position' habilita as propriedades 'top' e 'left' */
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /* medida em cm é pouco usada */
+            height: 20mm; /* medida em mm é pouco usada */
+            top: 150px; /* Essa propriedade só é valida usando 'position' */
+            left: 200px; /* Essa propriedade só é valida usando 'position' */
+        }
+
+        .unidades-relativas {
+            position: absolute; /* 'position' habilita as propriedades 'bottom' e 'right' */
+            font-size: 4em;
+            padding: 5%;
+            border: solid 1vw #222;
+            margin: .8%;
+            width: 20vw; /* vw = view width */
+            height: 15vh; /* vh = view height */
+            bottom: 5%; /* Essa propriedade só é valida usando 'position' */
+            right: 5%; /* Essa propriedade só é valida usando 'position' */
+        }
     </style>
 </head>
 

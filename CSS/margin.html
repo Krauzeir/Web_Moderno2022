@@ -27,8 +27,8 @@
             margin-top: 30px;
         }
 
-        /* 
-            float: left / right
+        /* Abaixo temos formas de anular o margin collapse
+            float: left / right  
             position: absolute
             display: inline-block
         */
@@ -36,7 +36,10 @@
 </head>
 
 <body>
+    <!-- Margin collapse é quando a margin de 2 elementos sobrepoe um ao outro -->
+    <!-- Utilizando o navegador é possível ver o efeito de margin collapse. -->
     <div class="m30">Conteúdo 1</div>
+    <!-- Quando o conteúdo é vazio é desconsiderado as 'margin(s)'-->
     <div class="m30" style="border: none"></div>
     <div class="m30">Conteúdo 2</div>
     <div class="mb30">Conteúdo 3</div>

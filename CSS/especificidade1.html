@@ -6,6 +6,35 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+        /* 
+            ORDEM DE IMPORTÂNCIA E EXECUÇÃO DA CUSTOMIZAÇÃO
+
+            1. regra com !important com a MESMA PROPRIEDADE (Não recomendado, somente em casos extremos)
+            2. seletores mais específicos (inline)
+            3. última regra processada (empate). A leitura é feita de cima pra baixo
+            
+        */
+
+        /* Ordem de prioridade de baixo(menor) pra cima(maior) */
+
+        p.observacao {
+            background: linear-gradient(to right, red, yellow);
+            padding: 2px;
+        }
+
+        .observacao {
+            /* o !important em 'background-color' não foi considerado, pois a PROPRIEDADE é diferente da de cima 'background'. Diferente do que ocorre com a propriedade 'padding' */
+            background-color: #5F5 !important; 
+            border: dashed 5px;
+            padding: 20px !important;
+            font-size: 40px;
+        }
+
+        p {
+            background-color: #aaa;
+        }
+
     </style>
 </head>
 

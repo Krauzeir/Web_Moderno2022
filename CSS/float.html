@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+<!--  O 'float' ainda é utilizavel, porém existem formas melhores de manipular posicionamento, tais como FlexBox. Caso utilize o 'float' lembre de usar o 'clear' no próximo elemento para ajustar, e isso deve ser feito de forma que case (float: right, clear: right) / (float: left, clear: left). E caso seja utilizado float para ambos os lados, basta utilizar o parametro 'clear: both '-->
+
 <head>
     <meta charset="UTF-8">
     <title>Float</title>
@@ -11,18 +13,29 @@
 
         .c1 {
             background-color: red;
+            float: right; /* 'float' Elemento deslocado para a direção solicitada. */
         }
 
         .c2 {
             background-color: green;
+            clear: right; /* Ao utilizar o 'clear', a posição original será mantida */
+            float: left; 
         }
         
         .c3 {
             background-color: blue;
+            clear: left;
         }
 
         .c4 {
             background-color: orange;
+            float: right;
+        }
+
+        div {
+            height: 150px;
+            width: 150px;
+            /* float: right; */ /* Desloca os elementos de forma que flutue de acordo com o parâmetro passado */
         }
     </style>
 </head>

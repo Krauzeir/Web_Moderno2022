@@ -5,7 +5,29 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        body {
+            font-size: 30px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul { padding: 0px }
+        div { background-color: seagreen; }
+        span {background-color: dodgerblue; }
+        li { background-color: purple; }
+
+        div, span, li {
+            width: 50%; /* Não funcionará no 'span', somente em 'div' e 'li' */
+            width: 200px; /* Não funcionará no 'span', somente em 'div' e 'li' */
+            height: 80px; /* Não funcionará no 'span', somente em 'div' e 'li' */
+            padding-top: 30px; /* Funcionará em todos os 3. SOBREPOSIÇÃO */
+            text-align: center;
+            display: block; /* Cada elemento terá sua linha própria */
+            display: inline; /* Os elementos ficarão juntos na mesma linha ('ul' não está selecionado, logo serão 2 linhas feitas). Altura e largura serão desconsiderados com o atributo inline */
+            display: inline-block; /* Funciona como ambos. E será possível trabalhar com altura e largura dos elementos */
+
+        }
+
     </style>
 </head>
 

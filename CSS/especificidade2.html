@@ -5,12 +5,49 @@
     <meta charset="UTF-8">
     <title>Especificidade CSS</title>
     <style>
-        /* https://specificity.keegan.st/ */
+        /* 
+        Calculadora para verificar especificidade!!
+
+        https://specificity.keegan.st/ 
+
+        REGRA DE IMPORTÂNCIA, ORDEM
+
+            1. Inline
+            2. ID
+            3. Classe, Pseudo-Classe, atributo
+            4. Elemento, Pseudo-Elementos
+
+            Em caso de empate de valor, é feito a leitura de forma normal (cima pra baixo)
+            
+            Para aprendizado, sugerido que verifique o valor de cada especificidade no link acima.
+        */
+
+        #unico1, #unico2 {
+            background-color: black;
+        }
+
+        div.estilo {background-color: green;}
+
+        div:hover, #unico1:hover {background-color: purple;}
+
+        div[wm-cor] {
+            background-color: darkorange;
+        }
+
+        div {
+            background-color: #00B;
+            color: white;
+        }
+
+        body {
+            font-size: 40px;
+        }
+
     </style>
 </head>
 
 <body>
-    <div id="unico1" class="estilo">
+    <div id="unico1" class="estilo" style="background-color: red">
         #unico1 vs .estilo vs inline
     </div>
     <div id="unico2" class="estilo">#unico2 vs .estilo</div>

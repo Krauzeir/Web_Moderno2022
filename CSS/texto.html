@@ -16,6 +16,60 @@
             flex-direction: column;
             align-items: center;
         }
+
+        div {
+            font-size: 50px;
+        }
+
+        p {
+            /* Valores padrões */
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 12pt;
+            font-size: 16px;
+
+            /* Unidades absolutas */
+            font-size: 100px; /* tamanho do pixel é relativo */ 
+            font-size: 72pt; /* pontos */
+            font-size: 1in; /* polegada */
+
+            /* Unidades relativas */
+             font-size: 2.2em; /* Usa a referência mais próxima como parametro */
+             font-size: 2.2rem; /* Usa a referência do arquivo raiz (html) como parametro */
+             font-size: 50vh; /* Propriedade em viewport (height), não é muito utilizada */
+             font-size: 10vw; /* Propriedade em viewport (width), não é muito utilizada */ 
+
+            font-family: monospace; /* Fonte espaçada */
+            font-family: Georgia, serif;
+            font-family: Verdana, Tahoma, sans-serif;
+            font-family: 'Indie Flower', cursive; /* Fonte do google. Link acima no 'head' */
+
+            font-weight: 100; 
+            font-style: italic;
+            text-transform: capitalize;
+            /* text-decoration: overline underline line-through; */
+            word-spacing: 10px; /* Afastamento entre palavras */
+            letter-spacing: 20px; /* Afastamento entre letras */
+            line-height: 2.5em; /* Altura da linha */
+            text-align: center; /* Alinhar texto de acordo com parametro */ 
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none; /* Retira overline underline line-through */
+            padding: 10px 30px;
+            border-radius: 25px; /* Arredondar borda */
+        }
+
+        .destaque {
+            color: #fff;
+            background-color: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        .destaque:active{ /* active, quando o botão estiver ativo...*/
+            box-shadow: none;
+        }
     </style>
 </head>
 

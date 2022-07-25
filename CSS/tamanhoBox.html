@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        /* Caso queira que seja abordado o box-sizing em toda a estrutura
+        * {
+            box-sizing: border-box;
+        }
+        */
+
         body {
             font-size: 45px;
+            margin: 0px;
+        }
+
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: solid 20px;
+            /* box-sizing: content-box; */ /* Content-box não irá limitar a borda de acordo com o tamanho da tela */
+            box-sizing: border-box; /* Border-box irá mostrar a borda de acordo com o tamanho da tela. Diminui o tamanho */
         }
     </style>
 </head>
