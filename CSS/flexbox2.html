@@ -6,7 +6,52 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        .flex-container div:nth-child(3) {
+            background-color: indianred;
+            /* 'order' serve para aumentar o nivel de prioridade dos elementos, por padrão o valor é 0, quanto maior o order, menor sua prioridade */
+            order: 1; 
+            order: -1;
+            align-self: center; /* centralizado */
+            align-self: flex-end; /* Posicionado no fim */
+            align-self: flex-start; /* Posicionado no começo */
+            align-self: stretch; /* Valor padrão */
+        }
+
+        /* 'flex-grow' para aumentar (trabalha com peso) */
+        .flex-container div {
+            width: 100px;
+            flex-grow: 0;
+            flex-grow: 1; /* Preencher o espaço em branco do container. Caso todos possuam o mesmo valor, todos terão a mesma dimensão */
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-grow: 2; /* Alterando o valor desse elemento em relação aos outros, podemos ver que ele ocupa mais espaço */
+        }
+
+        /* 'flex-shrink' para diminuir (trabalha com peso) */
+        .flex-container {
+            width: 300px;
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5; /* Alterando o valor desse elemento em relação aos outros, podemos ver que ele ocupa menos espaço */
+        }
     </style>
 </head>
 

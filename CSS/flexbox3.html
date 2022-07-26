@@ -6,7 +6,29 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex-container div {
+            flex-basis: 100px; /* Tamanho do elemento baseado no 'flex-direction: row' ou 'flex-direction: column' */
+            width: 200px; /* 'flex-basis' é mais forte que 'width'. Por isso, não é alterado o tamanho dos elementos */
+        }
+
+        .flex-container div:nth-child(4) {
+            /* Ordem das propriedades: grow shrink basis */
+            flex: 3 6 100px;
+        }
     </style>
 </head>
 

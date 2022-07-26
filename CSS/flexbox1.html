@@ -6,7 +6,52 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+            margin: 5px;
+        }
+
+        .big{
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            display: flex; /* É necessário que utilize 'display: flex' para trabalhar com FlexBox */
+            flex-direction: column; /* Por padrão o flex-direction tem o valor 'row' */
+            flex-direction: column-reverse; /* Reverte a coluna */
+            flex-direction: row-reverse; /* Reverte a linha e joga pra direita */
+            flex-direction: row; /* Valor padrão */
+            width: 50%;
+            flex-wrap: wrap; /* Quebra a linha e permanecerá o conteúdo dentro do container */
+            /* flex-wrap: wrap-reverse; */ /* Quebra a linha e altera a ordem dos elementos */
+            height: 200px;
+            flex-flow: column-reverse wrap; /* Sem o valor 'wrap', existirá sobreposição de valores */
+            flex-flow: row wrap;
+
+
+            justify-content: flex-start; /* Iniciar os elementos no começo(direita) */
+            justify-content: flex-end; /* Iniciar os elementos no fim(esquerda) */
+            justify-content: center; /* Centralizar */
+            justify-content: space-between; /* Espaço entre elementos */
+            justify-content: space-around; /* Irá gerar um espaço entre os elementos de forma balanceada* */
+
+
+            /* Cross Axis */
+            height: 400px;
+            align-items: stretch; /* Valor padrão */
+            align-items: baseline; /* Estrutura baseada no elemento */
+            align-items: flex-start; /* Alinha pelo começo (cima) */
+            align-items: flex-end; /* Alinha pelo fim (baixo) */
+            align-items: center; /* Centralizar */
+
+            /* mais de uma linha */
+            align-content: space-around;
+            align-content: space-between;
+            align-content: flex-start; /* Alinha na primeira linha(row) */ 
+            align-content: flex-end; /* Alinha na ultima linha(row) */
+            align-content: center; /* Alinha de forma centralizada */
+        }
     </style>
 </head>
 
