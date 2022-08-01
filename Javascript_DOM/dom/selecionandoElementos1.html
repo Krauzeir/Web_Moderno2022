@@ -1,3 +1,7 @@
+<!-- Site interessante para verificar usabilidade de funções. Can I use?
+        https://caniuse.com/ -->
+        
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +14,14 @@
     <div>Segundo</div>
     <div class="terceiro ultimo">.terceiro .ultimo</div>
     <script>              
+        /* Seleciona o elemento pelo 'id' (primeiro) */
         document.getElementById('primeiro').classList.add('destaque')
 
+        /* Seleciona o elemento pela tag 'div'. Nesse caso seriam os 3 div do código */
         const divs = document.getElementsByTagName('div')
         Array.from(divs).forEach(e => e.classList.remove('destaque'))
 
+        /*'[...divs]' é um Spread */
         const divsArray = [...divs]
         divsArray.forEach(e => e.classList.add('destaque'))
     </script>

@@ -10,14 +10,47 @@
 <body class='conteudo exercicio'>
     <div>
         <label for="compras">Compras</label>
-        <ul id="compras" destino='escritório' data-urgencia="5">
+        <ul id="compras" destino='escritório' data-urgencia="5" data-min="3">
             <li>Café</li>
             <li>Água</li>
             <li>Copo Descartável</li>
         </ul>
     </div>
     <script>
-        // ...
+        /* Ambos lista e lista2 pegam o mesmo elemento, porém de forma diferente */
+        const lista = document.querySelector('div ul[destino="escritório"]') 
+        const lista2 = document.querySelector('#compras')
+
+        console.log('Elemento "ul"....................')
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.id)
+
+        /* Quando existe atributos personalizados ('destino='escritório''), só conseguimos acessar seu valor utilizando o 'getAttribute()' como mostrado abaixo */
+        console.log('destino', lista.destino)
+        console.log('getAttribute', lista.getAttribute('destino'))
+
+        /* 'hasAttribute()', informa se existe aquele determinado atributo no elemento */
+        console.log('hasAttribute', lista.hasAttribute('destino')) /* true */
+        console.log('hasAttribute', lista.hasAttribute('origem')) /* false */
+
+        /* 'setAttribute()', altera ou adiciona um valor informando o primeiro parâmetro o atributo e segundo parâmetro o valor*/
+        /* Alterando o valor do elemento 'destino' de 'escritório' para 'empresa' */
+        lista.setAttribute('destino', 'empresa') 
+        /* Adicionando o atributo 'status' e seu valor 'novo' */
+        lista.setAttribute('status', 'novo')
+
+        /* 'removeAttribute()', remove o atributo */
+        lista.removeAttribute('id')
+
+        /* 'dataset', retorna todos os atributos que possuem data. Nesse caso, retorna os valores 'data-urgencia' e 'data-min' (Não muito utilizado) */
+        console.log(lista.dataset)
+
+        /* Cuidado!! */
+        const label = document.querySelector('label')
+        console.log(label.for) /* Retornará errado, pois 'for' é uma palavra reservada da linguagem. As soluções para isso está abaixo */
+        console.log(label.htmlFor) /* Solução 1 */
+        console.log(label.getAttribute('for')) /* Solução 2 */
+
     </script>
 </body>
 

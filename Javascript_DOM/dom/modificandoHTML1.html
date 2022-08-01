@@ -9,7 +9,40 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        const body = document.querySelector('body')
+
+        /* 'createElement()', cria um elemento HTML baseado no parâmetro informado */
+        const div1 = document.createElement('div')
+        div1.classList.add('destaque')
+        div1.innerHTML = 'Primeiro' /* Adicionando um texto */
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo', 'valor') 
+        div2.innerHTML = 'Segundo' /* Adicionando um texto */
+
+        const p = document.createElement('p')
+        p.innerHTML = 'Terceiro' /* Adicionando um texto */
+        const div3 = document.createElement('div')
+        /* 'appendChild()', adiciona o parâmetro como ultimo filho */ 
+        div3.appendChild(p)
+
+        /* Adicionando 'div1','div2' e 'div3' como ultimo filho de 'body' */ 
+        body.append(div1, div2, div3)
+
+
+        const texto = document.createTextNode('Antes...')
+        /* 'insertBefore()', adiciona o primeiro parâmetro antes do segundo parâmetro informado. Nesse caso, o texto será apresentado antes do filho de 'div3', ou seja, antes de 'p' */
+        div3.insertBefore(texto, div3.childNodes[0])
+
+        /* Clonar determinada estrutura. É preciso que passe o parâmetro 
+        'false' -> Clona o elemento selecionado apenas
+        'true' ->  Clona o elemento seleciona e seus filhos */
+        const div4 = div3.cloneNode(false)
+        const div5 = div3.cloneNode(true)
+        body.append(div4, div5)
+
+        /* 'removeChild()', remove o elementro passado no parâmetro */
+        body.removeChild(div3) 
     </script>
 </body>
 

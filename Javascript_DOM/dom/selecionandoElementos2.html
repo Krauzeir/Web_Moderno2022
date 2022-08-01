@@ -1,3 +1,6 @@
+<!-- Site interessante para verificar usabilidade de funções. Can I use?
+        https://caniuse.com/ -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +13,45 @@
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
-        // ...
+        /* O 'querySelector()' serve para pegar qualquer id/classe/tag/atributo/elemento. Diferente do 'getElementById' ou 'getElementsByTagName', é preciso que informe o seletor CSS. Exemplo: '#', '.', etc (Para melhor entendimento verificar arquivo 'selecionandoElementos1.html' */
+        document.querySelector('#primeiro').classList.add('destaque')
+
+        /* O 'querySelectorAll()' não possui o '.map()' , '.reduce()', '.filter()' */
+        const selecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+
+        const deselecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+
+
+        selecionar('div')
+        deselecionar('div')
+        selecionar('#primeiro')
+        deselecionar('div')
+        selecionar('.terceiro')
+        deselecionar('div')
+        selecionar('.ultimo')
+        deselecionar('div')
+        
+        /* Seleciona todos menos o primeiro devido a pseudo classe ':not()'*/
+        selecionar(':not(#primeiro)')
+        deselecionar('*')
+
+        /* Seleciona todos os primeiros filhos de cada elemento. Nesse caso foi considerado o primeiro 'div' e primeiro 'span' */
+        selecionar(':nth-child(1)')
+        deselecionar('*')
+
+        /* Seleciona a quantidade de elementos baseado no parametro passado '(1)' e na tipagem passada 'div' ou 'span' */
+        selecionar('div:nth-of-type(1)')
+        /* selecionar('span:nth-of-type(1)') */
+        deselecionar('*')
+
+        /* Seleciona por atributo utilizando o []*/
+        selecionar('[wb-attrib]')
+
+        /* É retornado uma NodeList como padrão. Para retornar como ArrayList faça como mostrado abaixo na página com F12 */
+        const arraylist = [...document.querySelectorAll('div')]
+        
+        const arraylist2 = Array.from(document.querySelectorAll('div'))
+
     </script>
 </body>
 </html>

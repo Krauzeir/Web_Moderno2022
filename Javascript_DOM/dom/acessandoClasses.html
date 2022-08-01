@@ -12,7 +12,45 @@
         Classes
     </div>
     <script>
-        // ...
+        const classes = document.querySelector('div').classList
+        /* const div = document.querySelector('div') 
+        const classes = div.classList */ 
+        classes.add('destaque')
+        classes.remove('destaque')
+        classes.toggle('destaque') /* Adiciona se NÃO tiver, remove se tiver esse atributo passado no parâmetro */
+        /* Verificando se existe o atributo 'destaque' */
+        console.log(classes.contains('destaque')) 
+        console.log(classes.length)
+
+        classes.add('destaque2')
+        classes.add('destaque3')
+        classes.add('destaque4')
+
+        console.log('')
+        console.log('for utilizando "in"')
+        console.log('')
+
+        for (let c in classes){
+            console.log(c)
+        }
+        
+        console.log('')
+        console.log('for utilizando "in"')
+        console.log('')
+
+        /* Forma correta de verificar APENAS valores em DOM */
+        for (let c of classes){
+            console.log(c)
+        }
+        console.log('')
+        console.log('Forma ideal com forEach')
+        console.log('')
+        /* Porém o ideal é que utilize o forEach() */
+        classes.forEach(c => console.log(c))
+
+        /* Spread, transformando um 'classes' em Array. Com isso possibilitando utilizar as funções 'map()', 'reduce()' e 'filter()' */
+        spread = [...classes]
+        console.log(spread)
     </script>
 </body>
 

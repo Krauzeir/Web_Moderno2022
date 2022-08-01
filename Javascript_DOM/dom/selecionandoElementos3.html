@@ -1,3 +1,6 @@
+<!-- Site interessante para verificar usabilidade de funções. Can I use?
+        https://caniuse.com/ -->
+
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +34,30 @@
         <button>Pesquisar</button>
     </form>
     <script>
-        // ...
+        /* Para acessar formulário pode ser feito da forma abaixo: */
+
+        /* Retorna um HTMLCollection dos formulários */
+        console.log(document.forms)
+
+        /* Retorna o FORM do índice passado no parametro '[0]'*/
+        console.log(document.forms[0])
+
+        /* Retorna um NodeList do formulário pelo 'name' e seu valor ('pesquisa'). TOMAR CUIDADO NA HORA DE MANUSEAR */
+        console.log(document.getElementsByName('pesquisa'))
+
+        /* Retorna um HTMLCollection do form pelo 'name' e seu valor ('pesquisa') */
+        console.log(document.getElementsByTagName('pesquisa'))
+
+        /* Retorna o FORM baseado em seu 'name' */
+        console.log(document.pesquisa)
+        /* Retorna o elemento baseado em seu 'name' */
+        console.log(document.pesquisa.q)
+
+        /* Passar um valor para determinado elemento */
+        document.pesquisa.q.value = 'Linux Brasil'
+        document.pesquisa.hl.value = 'en-us'
+
+
     </script>
 </body>
 

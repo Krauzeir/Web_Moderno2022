@@ -1,3 +1,6 @@
+<!-- Site interessante para verificar usabilidade de funções. Can I use?
+        https://caniuse.com/ -->
+
 <!DOCTYPE html>
 <html>
 
@@ -22,7 +25,61 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        /* A função abaixo foi criada apenas para melhor entendimento sobre o assunto. Não é o foco desse arquivo */
+
+        function log () {
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+
+
+        const lista = document.querySelector('div ul')
+        /* Devido ao DOM funcionar como um árvore (visualizar imagem em 'imgs/dom.png' . É possível percorrer a árvore do DOM em busca de alguns elementos. Exemplos abaixo: */
+
+        /* Retornará o pai. Nesse caso a 'div' */
+        lista.parentElement.log()
+        
+        /* Retornará os filhos em NodeList. Nesse caso os 'li' (Retornará texto também devido ao espaço durante o código entre os 'li'. Experimente colocar todos os 'li' junto ao 'ul'... */ 
+        lista.childNodes.log()
+
+        /* Pegar o primeiro filho */
+        const primeiro = lista.firstChild
+        /* Retornará #text devido a codificação feita. Experimente colocar todos os 'li' junto ao 'ul'...*/
+        primeiro.log()
+        /* Retornará o elemento mais próximo à frente. Neste caso, teremos o 'li' visto que esta proximo ao #text */
+        primeiro.nextSibling.log()
+
+        /* Pegar o ultimo filho */
+        const ultimo = lista.lastChild
+        /* Retornará #text devido a codificação feita. Experimente colocar todos os 'li' junto ao 'ul'...*/
+        ultimo.log()
+        /* Retornará o elemento mais próximo atras. Neste caso, teremos o 'li' visto que esta anterior ao #text */
+        ultimo.previousSibling.log()
+
+
+        /* ABAIXO TEMOS CÓDIGO E ABORDAGENS MAIS INTERESSANTES PARA MANIPULAÇÃO DE DADOS*/
+
+
+        /* Retornará apenas os 'li' em HTMLCollection, ou seja, sem o #text. Por isso, é uma abordagem mais interessante. */
+        lista.children.log()
+        /* Pegar o primeiro filho */
+        lista.firstElementChild.log()
+        /* Pegar o ultimo filho */
+        lista.lastElementChild.log()
+        /* Pegará o elemento filho de mesmo pai anterior ao elemento selecionado ('div ul'). Nesse caso, teremos o 'li' da 'div' anterior. */
+        lista.parentNode.previousElementSibling.log()
+        /* Pegará o elemento filho de mesmo pai poaterior ao elemento selecionado ('div ul'). Nesse caso, teremos o 'li' da 'div' posterior. */
+        lista.parentNode.nextElementSibling.log()
+
+        /* CASO SEJA POSSÍVEL, É IMPORTANTE EVITAR EM SEU CÓDIGO ESSE TIPO DE NAVEGAÇÃO ENTRE OS ELEMENTOS. USAR APENAS QUANDO NECESSÁRIO. O IDEAL É QUE UTILIZE O 'querySelectorAll' indicando os elementos. */
+
+        document.querySelectorAll('div ul li').log()
+
     </script>
 </body>
 

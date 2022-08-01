@@ -15,7 +15,38 @@
         <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
     </div>
     <script>
-        // ...
+        /* Utilizando o 'querySelector()' é possível acessar uma tag('img'), uma classe ('.img'), um id ('#img') ou uma propriedade ('[img]')  */
+        const img = document.querySelector('img')
+
+        /* Utilizando o 'getAtributte()' é possível pegar os atributos */
+        console.log('getAttribute', img.getAttribute('src'))
+
+        console.log('src', img.src)
+
+        console.log('["src"]', img['src'])
+
+        console.log('alt', img.alt)
+
+        console.log('Elemento "img"...........')
+        /* 'nodeType' informa o tipo do elemento com um número. Lista de classificação NodeType: https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType  */
+        console.log('NodeType', img.nodeType)
+        console.log('NodeName', img.nodeName)
+        console.log('NodeValue', img.nodeValue)
+
+        /* Diferente do 'getAttribute' que trará o valor daquele atributo, o 'getAttributeNode' retornará o atributo o nó que representa aquele atributo, ou seja,  trará mais informações sobre o nó*/
+        const src = img.getAttributeNode('src')
+        console.log('Atributo "src"............')
+        console.log('NodeType', src.nodeType)
+        console.log('NodeName', src.nodeName)
+        console.log('NodeValue', src.nodeValue)
+
+        const link = document.querySelector('a')
+        console.log('Elemento "a"..............')
+        console.log('href', link.href)
+        /* Pegando o elemento filho de 'a', que nesse caso será um texto (Cod3r) */
+        console.log('firstChild.nodeType', link.firstChild.nodeType)
+        /* link.firstChild.nodeValue = 'Novo Texto' */ /* Alterando o valor */
+        link.innerHTML = 'Novo Texto2' /* Forma mais comum de alterar valor */
     </script>
 </body>
 
