@@ -9,9 +9,26 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- <a href="https://google.com.br" onclick="navegarEm5s(event)">Google</a>
+        É possível criar o evento onclick como mostrado acima. Fica mais fácil de entender o código, porém existe outra forma de executado
+        O parâmentro 'event' NÃO pode mudar!!        
+        -->
+        <a espera-5segundos href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+        function navegarEm5s(e) {
+            /* 'preventDefault()', impede o comportamento padrão */
+            e.preventDefault()
+            console.log('Saindo em 5s...')
+            setTimeout(() => {
+                /* 'target' é uma propriedade que representa o elemento HTML que disparou o evento */
+                const link = e.target
+                window.location.href = link.href
+            }, 5000)
+        }
+
+        /* Uma melhor possibilidade de trabalhar com evento é adicionar um atributo na tag desejada '[espera-5segundos]' deixando o código mais limpo */
+        const a = document.querySelector('[espera-5segundos]')
+        a.onclick = navegarEm5s        
     </script>
 </body>

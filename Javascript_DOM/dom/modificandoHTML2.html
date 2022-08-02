@@ -12,7 +12,23 @@
         <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
+        const div = document.querySelector('div')
+        /* 'innerHTML' substitui tudo que está dentro. Nesse caso, substitui o que está dentro do div pelo texto informado. Ou seja, o 'p' não existirá mais */
+        div.innerHTML = 'Texto Alterado'
+        
+
+        /* 'outerHTML', substitui tudo que foi selecionado. Nesse caso, substitui o próprio 'div' e o que está dentro */
+        // div.outerHTML = 'Texto Alterado'
+
+
+        /* 'insertAdjacentHTML()', informa o primeiro parâmetro no qual passa a posição que deseja inserir e o segundo parâmetro é o que deseja passar. NÃO MUITO USADO */
+        div.insertAdjacentHTML('beforebegin', '<p> Antes do Inicio </p>')
+        div.insertAdjacentHTML('afterbegin', '<p> Depois do Inicio </p>')
+        div.insertAdjacentHTML('beforeend', '<p> Antes do Fim </p>')
+        div.insertAdjacentHTML('afterend', '<p> Depois do Fim </p>')
+
+        /* 'innerText', retorná apenas o texto, sem tags */
+        console.log(div.innerText)
     </script>
 </body>
 

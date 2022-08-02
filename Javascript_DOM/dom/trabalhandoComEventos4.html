@@ -25,12 +25,47 @@
     <form name="pesquisa" action="http://www.google.com.br/search">
         <input type="text" name="q" placeholder="Digite o termo...">
         <select name="hl">
-                <option value="pt-br">Português (Brasil)</option>
-                <option value="en-us">Inglês (Americano)</option>
-            </select>
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        const submit = document.querySelector('[wm-submit]')
+        submit.onclick = e => {
+            e.preventDefault()
+
+            /* Pega os parentes de 'button'. Nesse caso, será o 'input', 'select' e seus filhos */
+            const form = e.target.parentNode 
+            /* 'FormData()', é um objeto no qual você consegue acessar os dados do formulário para poder trata-los */
+            const formData = new FormData(e.target.parentNode) 
+            formData.append('ajax', true)
+            console.log(formData.get('q')) /* Pega o valor de 'q' */
+            console.log(formData.has('hl')) /* Informa se existe 'hl' */
+
+            /*
+            Forma incorreta
+
+            for (let dado in formData){
+                console.log(dado)
+            }
+            
+            console.log('')
+            console.log('Retornando apenas os valores')
+            console.log('')
+            */
+            
+
+            for (let dado of formData) {
+                console.log(dado)
+            }
+
+            console.log('')
+            console.log('Retornando apenas os valores')
+            console.log('')
+
+            /* Retorna apenas o valores com o forEach*/
+            formData.forEach(dado => console.log(dado))
+        }
     </script>
 </body>

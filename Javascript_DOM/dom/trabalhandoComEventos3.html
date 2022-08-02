@@ -45,7 +45,25 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+        /* Selecionando todos os elementos que possuam a classe 'item' */
+        const items = document.querySelectorAll('[wm-dropzone] .item')
+        items.forEach((item, index) => {
+            /* 'draggable', possibilita arrasta o que foi selecionado */
+            item.draggable = true
+            item.id = item.id || `draggable-item-${index}`
+            item.ondragstart = e => e.dataTransfer.setData('item-id', e.target.id)
+        })
+
+        const dropzones = document.querySelectorAll('[wm-dropzone]')
+        dropzones.forEach(dropzone => {
+            dropzone.ondragover = e => e.preventDefault()
+            dropzone.ondrop = e => {
+                const id = e.dataTransfer.getData('item-id')
+                const item = document.getElementById(id)
+                dropzone.appendChild(item)
+                /* e.target.appendChild(item) */ /* Veja a interação desse código por curiosidade*/
+          }
+        })
     </script>
 </body>
 
